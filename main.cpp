@@ -14,19 +14,22 @@ const int SCREEN_HEIGHT = 600;
 const int max_bad_guess_count = 10;
 const string animals[] = {
     "cat", "frog", "chicken", "turtle", "crab", "rabbit", "shark", 
-    "cow", "dog", "horse", "bull", "pig", "rhino", "sheep", "snake", "panda"
+    "cow", "dog", "horse", "bull", "pig", "rhino", "sheep", "snake", "panda", 
+    "eagle", "swan", "bee", "tortoise", "lion", "wolf", "owl", "whale", "ant"
 };
 const string food[] = {
-    "noodles", "apple", "sandwich", "peas", "mangoes",
-    "candy", "pizza", "fish", "rice", "bread", "donuts"
+    "noodles", "apple", "sandwich", "peas", "mangoes", "spaghetti", "watermelon",
+    "candy", "pizza", "fish", "rice", "bread", "donuts", "cake", "steak", "walnut",
+    "carrot", "garlic", "chips", "pineapple", "hotdog"
 };
 const string jobs[] = {
-    "nurse", "doctor", "artist", "singer", "dancer",
-    "pilot", "driver", "student", "teacher", "farmer"
+    "nurse", "doctor", "artist", "singer", "dancer", "policeman", "developer",
+    "pilot", "driver", "student", "teacher", "farmer", "designer", "tutor", "chef",
+    "builder", "engineer", "decorator", "dentist"
 };
 const string number[] = {
     "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
-    "eleven", "twelve", "thirteen", "fourteen", "fifteen", "fifty"
+    "eleven", "twelve", "thirteen", "fourteen", "fifteen", "fifty", "sixty", "forty"
 };
 const int animalsCount = sizeof(animals) / sizeof(string);
 const int foodCount = sizeof(food) / sizeof(string);
@@ -75,6 +78,7 @@ int main(int argv, char* argc[]) {
         if(!update(c)) {
             badGuessCount++;
             renderNum(badGuessCount);
+            renderLetter(c, 40 + badGuessCount*44, 550); 
         }
     } while(badGuessCount < max_bad_guess_count && secretWord != guessWord);
     displayGameResult();
@@ -302,7 +306,7 @@ char guessLetter() {
             }
         }
     }
-    SDL_Delay(1000);
+    SDL_Delay(500);
     return c;
 }
 
