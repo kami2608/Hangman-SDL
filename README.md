@@ -1,5 +1,5 @@
 # Hangman-SDL
-     The host random a word in 4 content: animals, food, number, jobs. 
+     The host random a word in 4 contents: animals, food, number, jobs. 
      The player's mission is guess exact word in 10 times to save the hang man.
 # Instruction
      - First, player chooses the content
